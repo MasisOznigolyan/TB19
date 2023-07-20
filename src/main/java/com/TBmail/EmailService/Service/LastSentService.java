@@ -5,7 +5,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.TBmail.EmailService.Collections.LastSent;
-import com.TBmail.EmailService.Collections.UserEmail;
 import com.TBmail.EmailService.Repositories.LastSentRepository;
 import com.TBmail.EmailService.Response.LastSentResponse;
 @Service
@@ -20,17 +19,17 @@ public class LastSentService {
 		lastSentRepository.save(lastSent);
 	}
 	
-	public LastSentResponse addLastSentR(LastSent lastSent) {
-		LastSent ls=lastSentRepository.save(lastSent);
+	public LastSentResponse addLastSentR(LastSent url) {
+		LastSent ls=lastSentRepository.save(url);
 		return modelMapper.map(ls,LastSentResponse.class );
 	}
 	
-	public LastSent findByUserEmailId(UserEmail userEmail) {
+	/*public LastSent findByUserEmailId(UserEmail userEmail) {
 		return lastSentRepository.findByUserEmailId(userEmail);
 		 
 				 
-	}
-	public LastSentResponse findByUserEmailIdR(UserEmail userEmail) {
+	}*/
+	public LastSentResponse findByUserEmailIdR(String userEmail) {
 		LastSent res= lastSentRepository.findByUserEmailId(userEmail);
 		 return modelMapper.map(res,LastSentResponse.class);
 	}

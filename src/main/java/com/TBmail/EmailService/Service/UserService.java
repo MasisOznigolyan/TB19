@@ -52,7 +52,7 @@ public class UserService{
 
         return userResponses;
     }
-	public List<User> getAllUsers(){ //uçur burayı
+	public List<User> getAllUsers(){ //burayı sil
 		return userRepository.findAll();
 	}
 	

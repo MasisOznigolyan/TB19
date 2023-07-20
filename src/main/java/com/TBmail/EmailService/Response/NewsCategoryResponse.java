@@ -10,7 +10,7 @@ import lombok.Setter;
 @Setter
 public class NewsCategoryResponse {
 	
-    //private String id;
+    private String id;
 		
 	
     private String newsCategoryId;
@@ -23,5 +23,11 @@ public class NewsCategoryResponse {
 
 	public NewsCategoryResponse() {
 		this.newsCategoryId=Uid.generateUniqueId();
+	}
+
+	@Override
+	public String toString() {
+		return "NewsCategoryResponse [id=" + id + ", newsCategoryId=" + newsCategoryId + ", name=" + name
+				+ ", categoryUrl=" + categoryUrl + "]";
 	}
 }

@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.TBmail.EmailService.Collections.LastSent;
-import com.TBmail.EmailService.Collections.UserEmail;
 import com.TBmail.EmailService.Response.LastSentResponse;
 import com.TBmail.EmailService.Service.LastSentService;
 
@@ -21,7 +20,7 @@ public class LastSentController {
 	LastSentService lastSentService;
 	
 	@GetMapping("/lastSent/{user}")
-	public ResponseEntity<LastSentResponse> findByUserEmail(@PathVariable("user") UserEmail userEmail){
+	public ResponseEntity<LastSentResponse> findByUserEmail(@PathVariable("user") String userEmail){
 		LastSentResponse res=lastSentService.findByUserEmailIdR(userEmail);
 		return ResponseEntity.status(HttpStatus.OK).body(res);
 	}

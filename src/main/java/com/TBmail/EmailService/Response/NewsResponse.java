@@ -14,7 +14,7 @@ import lombok.Setter;
 
 public class NewsResponse {
 	
-    //private String id;
+    private String id;
 	
 	
     private String newsId;
@@ -44,4 +44,10 @@ public class NewsResponse {
 		this.categoryId=categoryId;
 		
 	}
+	@Override
+	public String toString() {
+		return "NewsResponse [id=" + id + ", newsId=" + newsId + ", url=" + url + ", postDate=" + postDate
+				+ ", categoryId=" + categoryId + "]";
+	}
+	
 }

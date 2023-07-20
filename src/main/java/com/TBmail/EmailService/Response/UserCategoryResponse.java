@@ -6,20 +6,24 @@ import com.TBmail.EmailService.Collections.User;
 import lombok.Getter;
 import lombok.Setter;
 
+@Getter
+@Setter
 public class UserCategoryResponse {
-	@Getter
-	@Setter
-	public class UserCategory {
-		
-	    //private String id;
-		
-		
-	    private String userCategoryId;
+	
+	    private String id;
+
+
+		private String userCategoryId;
 		
 	
 		private User userId;
 		
 		
 		private NewsCategory newsCategoryId;
-	}
+		
+		@Override
+		public String toString() {
+			return "UserCategory [id=" + id + ", userCategoryId=" + userCategoryId + ", userId=" + userId
+					+ ", newsCategoryId=" + newsCategoryId + "]";
+		}
 }

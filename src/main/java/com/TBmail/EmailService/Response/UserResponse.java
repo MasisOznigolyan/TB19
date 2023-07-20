@@ -6,14 +6,14 @@ import lombok.Setter;
 @Getter
 @Setter
 public class UserResponse {
-	//private String id;
+	private String id;
     private String userId;
 	
 	private String name;
 
 	@Override
 	public String toString() {
-		return "UserResponse [ userId=" + userId + ", name=" + name + "]";
+		return "UserResponse [id="+ id+ ", userId=" + userId + ", name=" + name + "]";
 	}
 	
 }

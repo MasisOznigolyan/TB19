@@ -14,14 +14,18 @@ public class NewsService {
 	@Autowired
 	private NewsRepository newsRepository;
 	@Autowired
-	private ModelMapper modelmapper;
+	private ModelMapper modelMapper;
 	
-	public void addNews(News news) {
-		newsRepository.save(news);
+	
+	public NewsResponse addNews(News news) {
+		News n =newsRepository.save(news);
+		return modelMapper.map(n, NewsResponse.class);
 	}
+	
+	
 	public NewsResponse addNewsR(News news) {
 		News newNews= newsRepository.save(news);
-		return modelmapper.map(newNews, NewsResponse.class);
+		return modelMapper.map(newNews, NewsResponse.class);
 	}
 	
 	public void deleteAllNews() {

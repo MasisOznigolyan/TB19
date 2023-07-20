@@ -10,15 +10,22 @@ import lombok.Setter;
 @Setter
 public class UserEmailResponse {
 	
-    //private String id;
+    private String id;
 		
-	
-    private String userEmailId;
+
+	private String userEmailId;
 	
 	
 	private User userId;
 	
 	
 	private Email emailId;
+	
+	@Override
+	public String toString() {
+		return "UserEmailResponse [id=" + id + ", userEmailId=" + userEmailId + ", userId=" + userId + ", emailId="
+				+ emailId + "]";
+	}
+
 	
 }

@@ -86,7 +86,7 @@ public class Init {
         userService.createUser(user2);
         
         Email email2=new Email();
-        email2.setEMail("oznigolyan3@su.khas.edu.tr");
+        email2.setEMail("oznigolyan3@stu.khas.edu.tr");
        
        emailService.createNewEmail(email2);
         

@@ -5,7 +5,6 @@ import java.util.List;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 import com.TBmail.EmailService.Collections.LastSent;
-import com.TBmail.EmailService.Collections.UserEmail;
 import com.TBmail.EmailService.Response.LastSentResponse;
 
 
@@ -17,7 +16,7 @@ public interface LastSentRepository extends MongoRepository<LastSent, String> {
     void deleteById(String id);
     void deleteAll();
     //LastSent findByeMailId(String EmailId);
-    LastSent findByUserEmailId(UserEmail userEmail);
+    LastSent findByUserEmailId(String userEmailId);
 	
   
 }

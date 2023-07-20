@@ -9,7 +9,6 @@ import org.springframework.data.mongodb.core.mapping.Field;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
-import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;
@@ -24,12 +23,12 @@ import lombok.Setter;
 public class News {
 	@NonNull
     @Id
-    @Setter(AccessLevel.NONE)
+    
     private String id;
 	
 	@NonNull
     @Field("newsId")
-	@Setter(AccessLevel.NONE)
+	
     private String newsId;
 	
 	@Field("url")
