@@ -11,4 +11,5 @@ public class EmailSenderConfig {
 	public ModelMapper modelMapper() {
 		return new ModelMapper();
 	}
+	
 }

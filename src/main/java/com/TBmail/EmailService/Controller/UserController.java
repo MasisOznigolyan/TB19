@@ -17,6 +17,8 @@ import com.TBmail.EmailService.Response.UserResponse;
 import com.TBmail.EmailService.Service.UserService;
 
 @RestController
+//@EnableSwagger2
+//@RequestMapping("/api")
 public class UserController {
 	
 	@Autowired

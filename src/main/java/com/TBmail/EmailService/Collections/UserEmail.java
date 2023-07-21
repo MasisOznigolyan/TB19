@@ -5,7 +5,6 @@ import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
-import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;
@@ -21,12 +20,12 @@ public class UserEmail {
 
 	@NonNull
     @Id
-    @Setter(AccessLevel.NONE)
+    //@Setter(AccessLevel.NONE)
     private String id;
 		
 	@NonNull
     @Field("userEmailId")
-	@Setter(AccessLevel.NONE)
+	//@Setter(AccessLevel.NONE)
     private String userEmailId;
 	
 	@NonNull

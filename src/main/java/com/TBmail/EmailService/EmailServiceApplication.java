@@ -8,12 +8,15 @@ import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
 @EnableScheduling
+//@EnableSwagger2
 public class EmailServiceApplication  {
 	
 	@Bean
     public RestTemplate restTemplate() {
         return new RestTemplate();
     }
+	
+	
 	public static void main(String[] args) {
 		SpringApplication.run(EmailServiceApplication .class, args);
 		
