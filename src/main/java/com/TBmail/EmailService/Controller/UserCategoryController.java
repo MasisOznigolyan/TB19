@@ -13,22 +13,36 @@ import com.TBmail.EmailService.Collections.UserCategory;
 import com.TBmail.EmailService.Response.UserCategoryResponse;
 import com.TBmail.EmailService.Service.UserCategoryService;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
+
+@Tag(name="User-Category", description="Controller for userCategory CRUD operations")
 @RestController
 public class UserCategoryController {
 	@Autowired
 	UserCategoryService userCategoryService;
 	
+	
+	@Operation(summary="get userCategory by id",
+			description="Get the userCategory info by spesifying its id. Response will be userCategoryResponse object.")
 	@GetMapping("/userCategory/{id}")
 	public ResponseEntity<UserCategoryResponse> findByUserId(@PathVariable("id") String id){
 		UserCategoryResponse ucr=userCategoryService.findByUserIdR(id);
 		return ResponseEntity.status(HttpStatus.OK).body(ucr);
 	}
 	
+	
+	@Operation(summary="create/update userCategory",
+			description="create/update by spesifying UserCategory body. Response will be UserCategoryResponse object")
 	@PostMapping("/userCategory/create")
 	public ResponseEntity<UserCategoryResponse>createUserCategory(UserCategory userCategory){
 		UserCategoryResponse res = userCategoryService.createUserCategoryR(userCategory);
 		return ResponseEntity.status(HttpStatus.CREATED).body(res);
 	}
+	
+	
+	@Operation(summary="delete all the userCategory",
+			description="deletes all the userCategories from database. Do not use if if you don't have database backup")
 	@DeleteMapping("/userCategory/delete")
 	public ResponseEntity<Void> deleteAllUserCategory(){
 		boolean deleted=userCategoryService.deleteAllUserCategoryR();		

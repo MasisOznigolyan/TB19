@@ -116,7 +116,7 @@ public class ScheduledTask {
 						String emailId=getDataFromAPI("http://localhost:8080/userEmail/"+data.get(i).getId(),new ParameterizedTypeReference<UserEmailResponse>() {}).getEmailId().getId();
 						EmailResponse emailResponse=getDataFromAPI("http://localhost:8080/emails/"+emailId,new ParameterizedTypeReference<EmailResponse>() {});
 						
-						senderService.sendEmail(emailResponse.getEMail(),"TB özet", content); //mailUrls.get(j)
+						//senderService.sendEmail(emailResponse.getEMail(),"TB özet", content); //mailUrls.get(j)
 						
 						News news=new News();
 						news.setContent(MailContent.getContent(mailUrls.get(j)));
@@ -175,6 +175,11 @@ public class ScheduledTask {
 					    	 
 					    	
 					    	 lastSentService.addLastSentR(lsAdd);
+					    	 
+					    	 
+					    	 
+					    	 
+					    	 
 					     }
 					     
 					}
@@ -200,10 +205,21 @@ public class ScheduledTask {
 			
 		}
 
-public <T> T getDataFromAPI(String apiUrl, ParameterizedTypeReference<T> responseType) {
-	ResponseEntity<T> responseEntity = restTemplate.exchange(apiUrl, HttpMethod.GET, null, responseType);
-    return responseEntity.getBody();
-}
+	public <T> T getDataFromAPI(String apiUrl, ParameterizedTypeReference<T> responseType) {
+		ResponseEntity<T> responseEntity = restTemplate.exchange(apiUrl, HttpMethod.GET, null, responseType);
+	    return responseEntity.getBody();
+	}
+	
+	/*public static ResponseEntity<String> sendHttpPostRequest(String url, String requestBody) {
+        RestTemplate restTemplate = new RestTemplate();
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_JSON);
+
+        HttpEntity<String> httpEntity = new HttpEntity<>(requestBody, headers);
+
+        return restTemplate.exchange(url, HttpMethod.POST, httpEntity, String.class);
+    }*/
 
 
 /*
