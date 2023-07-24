@@ -51,6 +51,8 @@ public class ScheduledTask {
 	@Autowired
 	ModelMapper modelMapper;
 	
+	
+	
 	RestTemplate restTemplate = new RestTemplate();
 
 	
@@ -114,7 +116,7 @@ public class ScheduledTask {
 						String emailId=getDataFromAPI("http://localhost:8080/userEmail/"+data.get(i).getId(),new ParameterizedTypeReference<UserEmailResponse>() {}).getEmailId().getId();
 						EmailResponse emailResponse=getDataFromAPI("http://localhost:8080/emails/"+emailId,new ParameterizedTypeReference<EmailResponse>() {});
 						
-						//senderService.sendEmail(emailResponse.getEMail(),"TB özet", mailUrls.get(j)); //content
+						senderService.sendEmail(emailResponse.getEMail(),"TB özet", content); //mailUrls.get(j)
 						
 						News news=new News();
 						news.setContent(MailContent.getContent(mailUrls.get(j)));

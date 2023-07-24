@@ -6,9 +6,12 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.web.client.RestTemplate;
 
+import io.swagger.v3.oas.annotations.OpenAPIDefinition;
+import io.swagger.v3.oas.annotations.info.Info;
+
 @SpringBootApplication
 @EnableScheduling
-//@EnableSwagger2
+@OpenAPIDefinition(info = @Info(title = "TB mail application", version = "1.0", description = "TB mail data crud"))
 public class EmailServiceApplication  {
 	
 	@Bean

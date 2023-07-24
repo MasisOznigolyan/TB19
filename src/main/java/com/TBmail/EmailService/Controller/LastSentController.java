@@ -27,7 +27,7 @@ public class LastSentController {
 	@PostMapping("/lastSent/add")
 	public ResponseEntity<LastSentResponse> addLastSent(LastSent lastSent){
 		LastSentResponse lsr=lastSentService.addLastSentR(lastSent);
-		return ResponseEntity.status(HttpStatus.CREATED).body(lsr);
+		return ResponseEntity.status(HttpStatus.OK).body(lsr);
 	}
 	@DeleteMapping("/lastSent/delete")
 	public ResponseEntity<Void> deleteAllLastSent(){
